@@ -37,10 +37,79 @@
     'use strict';
 
     ///////////////////////////
-    // Put your code here!
+    function LivingThing (thingName, thingHealth) {
+          let name = thingName;
+          let health = thingHealth;
+
+          this.isAlive = function(){
+              if (health > 0) {
+                  return true;
+              }
+          }
+
+          this.getName = function(){
+              return name;
+          }
+
+          this.getHealth = function(){
+              return health;
+          }
+
+         this.setHealth = function(newHealth){
+            health = newHealth
+          }
+    }
+
+    function Hero(heroName, heroHealth) {
+        LivingThing.call (this, thingName, thingHealth);
+        Hero.prototype = Object.create (LivingThing.prototype);
+        Hero.prototype.constructor = Hero;
+
+        this.attack() = function(){
+            if (this.monster.isAlive){
+                let monsterDamage = function getRandomInt(){
+                    return Math.random() * 11;
+                    }
+                }
+
+                let newHealth = (monster.getHealth - monsterDamage);
+                monster.setHealth;
+
+            let heroDamage = function getRandomInt(){
+                return Math.random() * 11;
+            }
+            newHealth = (hero.getHealth - heroDamage);
+            hero.setHealth;
+
+            console.log("monster " + monster.getName + " damage = " + monsterDamage);
+            console.log("monster remaining health = " + monster.getHealth);
+            console.log("hero " + hero.getName + " damage = " + heroDamage);
+            console.log("hero remaining health = " + hero.getHealth);
+        }
+
+        do {
+            this.fight() = function() {
+
+            }
+
+        }while (true);
+
+    }
+
+
+
+
+
+    let Rat = new LivingThing("Rat", 5);
+    let Goblin = new LivingThing("Goblin", 30);
+    let Ogre = new LivingThing("Ogre", 80);
+
+    let monsters = [Rat, Goblin, Ogre]
+
+
     ///////////////////////////
 
-    
+
 
     //The code below should work when you are done
     console.log("A hero emerges!");

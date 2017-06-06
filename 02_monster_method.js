@@ -13,10 +13,28 @@
     'use strict';
 
     ///////////////////////////
-    // Put your code here!
+    function LivingThing (name, health) {
+      this.name = name;
+      this.health = health;
+
+      this.isAlive = function(){
+          if (health > 0) {
+              return "true"
+          }
+      }
+    }
+
+    let Rat = new LivingThing("Rat", 5);
+    let Goblin = new LivingThing("Goblin", 30);
+    let Ogre = new LivingThing("Ogre", 80);
+
+    let monsters = [Rat, Goblin, Ogre];
+
+
+
     ///////////////////////////
 
-    
+
     //The code below should work when you are done
     console.log("Are the monsters alive?");
 
@@ -40,7 +58,3 @@
     }
 
 })();
-    
-
-
-    
